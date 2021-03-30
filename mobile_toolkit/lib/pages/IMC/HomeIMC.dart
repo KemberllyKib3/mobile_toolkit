@@ -181,4 +181,4 @@ String _calculaIMC(double altura, double peso) {
   return resultado;
 }
 
-void _limpaResultado() {}
+// void _limpaResultado() {}

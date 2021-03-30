@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_toolkit/pages/Calculadora/Calculation.dart';
 
-class HomeCalculator extends StatefulWidget {
+class HomeNivelador extends StatefulWidget {
+  HomeNivelador({Key key}) : super(key: key);
+
   @override
-  _HomeCalculatorState createState() => _HomeCalculatorState();
+  _HomeNiveladorState createState() => _HomeNiveladorState();
 }
 
-class _HomeCalculatorState extends State<HomeCalculator> {
+class _HomeNiveladorState extends State<HomeNivelador> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Calculadora',
+          'Nivelador',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -21,7 +22,7 @@ class _HomeCalculatorState extends State<HomeCalculator> {
         ),
         centerTitle: true,
       ),
-      body: Calculation(),
+      body: Text('Vai trabalhar corno'),
     );
   }
 }
