@@ -22,7 +22,7 @@ class _HomeNiveladorState extends State<HomeNivelador> {
         ),
         centerTitle: true,
       ),
-      body: Text('Vai trabalhar corno'),
+      body: Text('Vai trabalhar moço'),
     );
   }
 }

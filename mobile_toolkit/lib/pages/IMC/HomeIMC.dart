@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:mobile_toolkit/pages/utils/ButtonsCalcularLimpar.dart';
+import 'package:mobile_toolkit/pages/utils/Resultado.dart';
 
 class HomeIMC extends StatefulWidget {
   @override
@@ -84,66 +86,20 @@ class _HomeIMCState extends State<HomeIMC> {
                   },
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    MaterialButton(
-                      padding: EdgeInsets.only(left: 40, right: 40),
-                      elevation: 3,
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        "CALCULAR",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: 'Fira Sans',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      height: 50,
-                      textColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          _formKey.currentState.save();
-                          setState(
-                            () => _resultado = _calculaIMC(_altura, _peso),
-                          );
-                        }
-                      },
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        setState(
-                          () => {
-                            _resultado = "",
-                          },
-                        );
-                      },
-                      child: Text(
-                        'Limpar resultado',
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                      ),
-                    )
-                  ],
-                ),
+              MainSecondButtons(
+                labelMain: "Calcular",
+                labelSecond: "Limpar resultado",
+                onTapMain: () {
+                  if (_formKey.currentState.validate()) {
+                    _formKey.currentState.save();
+                    setState(() => _resultado = _calculaIMC(_altura, _peso));
+                  }
+                },
+                onTapSecond: () {
+                  setState(() => {_resultado = ""});
+                },
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 25),
-                child: Text(
-                  _resultado,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: 'Fira Sans',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              Resultado(label: _resultado),
             ],
           ),
         ),

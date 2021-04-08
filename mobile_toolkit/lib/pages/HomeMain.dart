@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_toolkit/pages/AreaVolume/HomeAreaVolume.dart';
 import 'package:mobile_toolkit/pages/Calculadora/HomeCalculator.dart';
 import 'package:mobile_toolkit/pages/Conversor_de_Medidas/HomeConversorMedidas.dart';
 import 'package:mobile_toolkit/pages/Cronometro/HomeCronometro.dart';
@@ -79,6 +80,31 @@ class _HomeMainState extends State<HomeMain> {
               color: Colors.black87,
             ),
             subtitle: Text("Fazer cálculos matemáticos"),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeAreaVolume(),
+                ),
+              );
+            },
+            title: Text(
+              'Área e Volume',
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 18,
+                fontFamily: "Fira Sans",
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            // leading: Icon(Icons.add),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black87,
+            ),
+            subtitle: Text("Calcular valores de área e volume"),
           ),
           ListTile(
             onTap: () {

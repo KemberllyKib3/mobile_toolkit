@@ -20,7 +20,7 @@ class _HomeConversorMedidasState extends State<HomeConversorMedidas> {
         ),
         centerTitle: true,
       ),
-      body: Text('Vai trabalhar corno'),
+      body: Text('Vai trabalhar moço'),
     );
   }
 }

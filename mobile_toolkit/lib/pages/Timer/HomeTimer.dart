@@ -22,7 +22,7 @@ class _HomeTimerState extends State<HomeTimer> {
         ),
         centerTitle: true,
       ),
-      body: Text('Vai trabalhar corno'),
+      body: Text('Vai trabalhar moço'),
     );
   }
 }
